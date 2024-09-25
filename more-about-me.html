@@ -13,28 +13,28 @@
         }
 
         .container {
-            width: 60%;
-            margin: 50px auto;
+            width: 80%;
+            margin: 20px auto;
             background-color: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             color: #4CAF50;
-            font-size: 26px;
+            font-size: 24px;
             text-align: center;
             margin-bottom: 20px;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid; /* Creates the typing cursor effect */
-            width: 0; /* Initially hides the text */
-            animation: typing 5s steps(66, end) forwards, blink 1s step-end infinite; /* Adjusted steps value to match character count */
+            width: 0;
+            animation: typing 4s steps(50, end) forwards, blink 1s step-end infinite;
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             color: #333;
             text-align: justify;
@@ -56,6 +56,52 @@
             from { border-right-color: rgba(0, 0, 0, 0.75); }
             to { border-right-color: transparent; }
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 8rem;
+                margin-left: 0.3rem;
+                margin-right: 0.3rem;
+                width: 60%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+                animation: typing 6s steps(35, end) forwards, blink 1s step-end infinite;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            /* Changing heading text for smaller screens */
+            h2::before {
+                content: "The most interesting thing about me.....";
+                animation: none; /* Remove typing animation for this text */
+            }
+
+            h2 {
+                width: auto; /* Removes the width-based typing animation */
+                border-right: none; /* Removes cursor effect */
+            }
+        }
     </style>
 </head>
 <body>
@@ -69,3 +115,4 @@
 
 </body>
 </html>
+
